@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Booth - Claim Cipher</title>
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
+                    <span>📱</span> Jobs Studio
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-cipher-content">
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">⚙️ Settings Booth</h1>
+            <p class="page-cipher-subtitle">Customize your cipher experience</p>
+        </div>
+
+        <div class="cipher-grid cipher-grid--2">
+            <!-- Profile Settings -->
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">👤 Profile Settings</h3>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="cipher-form-group">
+                        <label class="cipher-label">Display Name</label>
+                        <input type="text" class="cipher-input" value="Demo User" readonly>
+                    </div>
+                    <div class="cipher-form-group">
+                        <label class="cipher-label">Email</label>
+                        <input type="email" class="cipher-input" value="demo@claimcipher.com" readonly>
+                    </div>
+                    <div class="cipher-form-group">
+                        <label class="cipher-label">License Number</label>
+                        <input type="text" class="cipher-input" value="DEMO-2024" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Preferences -->
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">🎨 App Preferences</h3>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="cipher-form-group">
+                        <label class="cipher-label">Theme</label>
+                        <select class="cipher-select">
+                            <option value="dark" selected>Dark Mode (Default)</option>
+                            <option value="light">Light Mode</option>
+                            <option value="auto">Auto (System)</option>
+                        </select>
+                    </div>
+                    <div class="cipher-form-group">
+                        <label class="cipher-label">Default View</label>
+                        <select class="cipher-select">
+                            <option value="dashboard" selected>Command Center</option>
+                            <option value="jobs">Jobs Studio</option>
+                            <option value="mileage">Mileage Cypher</option>
+                        </select>
+                    </div>
+                    <div class="cipher-form-group">
+                        <label class="cipher-checkbox-label">
+                            <input type="checkbox" class="cipher-checkbox" checked>
+                            <span>Enable notifications</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="cipher-card">
+            <div class="cipher-card-header">
+                <h3 class="cipher-card-title">💾 Data Management</h3>
+            </div>
+            <div class="cipher-card-content">
+                <div class="cipher-grid cipher-grid--4">
+                    <button class="cipher-btn cipher-btn--outline">📤 Export Data</button>
+                    <button class="cipher-btn cipher-btn--outline">📥 Import Data</button>
+                    <button class="cipher-btn cipher-btn--warning">🗑️ Clear Cache</button>
+                    <button class="cipher-btn cipher-btn--danger">💣 Reset All</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script>
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            showCipherNotification('Settings Booth loaded', 'success');
+        });
+    </script>
+</body>
+</html>

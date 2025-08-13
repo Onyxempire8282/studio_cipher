@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center - Claim Cipher</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+    <link rel="stylesheet" href="styles/command-center.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
+                    <span>📱</span> Jobs Studio
+                    <span class="cipher-badge cipher-badge--pro">PRO</span>
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <!-- User Cipher Info -->
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Command Center -->
+    <main class="main-cipher-content">
+        <!-- Demo Notice (only for demo users) -->
+        <div class="demo-cipher-notice" id="demo-notice" data-demo-only="true" style="display: none;">
+            <div class="demo-cipher-notice-content">
+                <span class="demo-cipher-notice-icon">👀</span>
+                <div class="demo-cipher-notice-text">
+                    <strong>Preview Mode:</strong> This is sample data showing what you'll track - No Matter What
+                </div>
+            </div>
+        </div>
+
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">🎤 Command Center</h1>
+            <p class="page-cipher-subtitle" id="dashboard-subtitle">Welcome back! Here's your cipher status.</p>
+        </div>
+
+        <!-- Stats Cipher Grid -->
+        <div class="stats-cipher-grid">
+            <div class="stat-cipher-card">
+                <div class="cipher-kpi">
+                    <div class="cipher-kpi-value" id="miles-stat">247</div>
+                    <div class="cipher-kpi-label">Miles This Month</div>
+                </div>
+            </div>
+            <div class="stat-cipher-card">
+                <div class="cipher-kpi">
+                    <div class="cipher-kpi-value" id="routes-stat">18</div>
+                    <div class="cipher-kpi-label">Routes Optimized</div>
+                </div>
+            </div>
+            <div class="stat-cipher-card">
+                <div class="cipher-kpi">
+                    <div class="cipher-kpi-value" id="jobs-stat">42</div>
+                    <div class="cipher-kpi-label">Jobs Completed</div>
+                </div>
+            </div>
+            <div class="stat-cipher-card">
+                <div class="cipher-kpi">
+                    <div class="cipher-kpi-value" id="earnings-stat">$1,847</div>
+                    <div class="cipher-kpi-label">Total Earnings</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Cipher Content Grid -->
+        <div class="cipher-grid cipher-grid--2 mt-32">
+            <!-- Recent Routes Cipher Card -->
+            <div class="cipher-card command-stat-card" data-stat="miles">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">Recent Routes</h3>
+                    <button class="cipher-btn cipher-btn--outline cipher-btn--sm" onclick="window.location.href='route-cypher.html'">View All</button>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="recent-routes-cipher" id="recent-routes">
+                        <div class="route-cipher-item">
+                            <div class="route-cipher-item-info">
+                                <h4>Downtown Route - Aug 9</h4>
+                                <p>8 stops • 47 miles • 3.2 hours</p>
+                            </div>
+                            <span class="cipher-badge cipher-badge--success">Completed</span>
+                        </div>
+                        <div class="route-cipher-item">
+                            <div class="route-cipher-item-info">
+                                <h4>Northside Loop - Aug 8</h4>
+                                <p>12 stops • 63 miles • 4.1 hours</p>
+                            </div>
+                            <span class="cipher-badge cipher-badge--success">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Jobs Cipher Card -->
+            <div class="cipher-card command-stat-card" data-stat="routes">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">Active Jobs</h3>
+                    <button class="cipher-btn cipher-btn--outline cipher-btn--sm" onclick="window.location.href='jobs-studio.html'">View All</button>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="active-jobs-cipher">
+                        <div class="job-cipher-item">
+                            <div class="job-cipher-item-info">
+                                <h4>2022 Honda Accord - #CLM-9876</h4>
+                                <p>Ready for inspection</p>
+                            </div>
+                            <button class="cipher-btn cipher-btn--success cipher-btn--small">Start</button>
+                        </div>
+                        <div class="job-cipher-item">
+                            <div class="job-cipher-item-info">
+                                <h4>2020 Ford F-150 - #CLM-4876</h4>
+                                <p>Pending assignment</p>
+                            </div>
+                            <button class="cipher-btn cipher-btn--primary cipher-btn--small">Assign</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Cipher -->
+                <div class="cipher-card command-stat-card" data-stat="jobs">
+                    <div class="cipher-card-header">
+                        <h3 class="cipher-card-title">Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-cipher">
+                        <button class="cipher-btn cipher-btn--primary cipher-btn--full mb-8" onclick="window.location.href='mileage-cypher.html'">
+                            <span>🚗</span> Calculate Mileage
+                        </button>
+                        <button class="cipher-btn cipher-btn--primary cipher-btn--full mb-8" onclick="window.location.href='route-cypher.html'">
+                            <span>🗺️</span> Optimize Route
+                        </button>
+                        <button class="cipher-btn cipher-btn--primary cipher-btn--full" onclick="window.location.href='jobs-studio.html'">
+                            <span>📱</span> Manage Jobs
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Cipher Card -->
+            <div class="cipher-card command-stat-card" data-stat="earnings">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">Recent Activity</h3>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="activity-cipher-feed" id="activity-feed">
+                        <div class="activity-cipher-item">
+                            <div class="activity-cipher-icon activity-cipher-icon--success">✓</div>
+                            <div class="activity-cipher-content">
+                                <div class="activity-cipher-title">Route optimized</div>
+                                <div class="activity-cipher-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-cipher-item">
+                            <div class="activity-cipher-icon activity-cipher-icon--info">📱</div>
+                            <div class="activity-cipher-content">
+                                <div class="activity-cipher-title">Photos synced from mobile</div>
+                                <div class="activity-cipher-time">4 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-cipher-item">
+                            <div class="activity-cipher-icon activity-cipher-icon--warning">📄</div>
+                            <div class="activity-cipher-content">
+                                <div class="activity-cipher-title">Job completed</div>
+                                <div class="activity-cipher-time">Yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script src="scripts/command-center.js"></script>
+    
+    <!-- Authentication and initialization script -->
+    <script>
+        // 🎤 Authentication check
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        // Initialize page with user context
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            
+            // Initialize dashboard data
+            if (typeof initializeCommandCenter === 'function') {
+                initializeCommandCenter();
+            }
+        });
+
+        function initializeCipherUserContext() {
+            const userType = localStorage.getItem('cipher_user_type') || 'demo';
+            const userEmail = localStorage.getItem('cipher_user_email') || 'demo@claimcipher.com';
+            const userName = userType === 'demo' ? 'Demo User' : userEmail.split('@')[0];
+            
+            // Set user type attribute
+            document.body.setAttribute('data-cipher-user-type', userType);
+            
+            // Update user display
+            const userNameEl = document.getElementById('user-name');
+            const userRoleEl = document.getElementById('user-role');
+            const userAvatarEl = document.getElementById('user-avatar');
+            
+            if (userNameEl) userNameEl.textContent = userName;
+            if (userRoleEl) userRoleEl.textContent = userType === 'demo' ? 'Demo Mode' : 'Pro User';
+            if (userAvatarEl) userAvatarEl.textContent = userName.substring(0, 2).toUpperCase();
+            
+            // Show demo notice if needed
+            if (userType === 'demo') {
+                const demoNotice = document.getElementById('demo-notice');
+                if (demoNotice) {
+                    demoNotice.style.display = 'block';
+                }
+            }
+        }
+
+        function setupCipherLogoutHandler() {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('cipher_authenticated');
+                    localStorage.removeItem('cipher_user_type');
+                    localStorage.removeItem('cipher_user_email');
+                    localStorage.removeItem('cipher_demo_start_time');
+                    window.location.href = './login-cypher.html';
+                });
+            }
+        }
+    </script>
+</body>
+</html>

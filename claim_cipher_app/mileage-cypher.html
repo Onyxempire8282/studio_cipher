@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mileage Cypher - Claim Cipher</title>
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+    <link rel="stylesheet" href="styles/mileage-cypher.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
+                    <span>📱</span> Jobs Studio
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <!-- User info -->
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-cipher-content">
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">🚗 Mileage Cypher</h1>
+            <p class="page-cipher-subtitle">Calculate reimbursement with multi-firm rates - No Matter What</p>
+        </div>
+
+        <!-- Mileage Calculator -->
+        <div class="cipher-card">
+            <div class="cipher-card-header">
+                <h3 class="cipher-card-title">📏 Trip Calculator</h3>
+                <button class="cipher-btn cipher-btn--primary cipher-btn--sm" id="add-trip-btn">
+                    ➕ Add Trip
+                </button>
+            </div>
+            <div class="cipher-card-content">
+                <div class="mileage-cipher-table">
+                    <div class="table-cipher-header">
+                        <span>From</span>
+                        <span>To</span>
+                        <span>Miles</span>
+                        <span>Firm</span>
+                        <span>Amount</span>
+                        <span>Actions</span>
+                    </div>
+                    
+                    <div id="trips-cipher-container">
+                        <!-- Trips will be added here dynamically -->
+                    </div>
+                </div>
+                
+                <div class="mileage-cipher-total">
+                    <h3>💰 Total Reimbursement: <span id="total-amount">$0.00</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Firm Rates -->
+        <div class="cipher-card">
+            <div class="cipher-card-header">
+                <h3 class="cipher-card-title">🏢 Firm Rates</h3>
+            </div>
+            <div class="cipher-card-content">
+                <div class="firm-rates-cipher-grid">
+                    <div class="firm-cipher-rate-card">
+                        <h4>State Farm</h4>
+                        <div class="rate-cipher-amount">$0.58/mile</div>
+                    </div>
+                    <div class="firm-cipher-rate-card">
+                        <h4>Allstate</h4>
+                        <div class="rate-cipher-amount">$0.62/mile</div>
+                    </div>
+                    <div class="firm-cipher-rate-card">
+                        <h4>Progressive</h4>
+                        <div class="rate-cipher-amount">$0.55/mile</div>
+                    </div>
+                    <div class="firm-cipher-rate-card">
+                        <h4>Geico</h4>
+                        <div class="rate-cipher-amount">$0.56/mile</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script src="scripts/mileage-cypher.js"></script>
+    <script>
+        // Authentication check
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            initializeMileageCypher();
+        });
+    </script>
+</body>
+</html>

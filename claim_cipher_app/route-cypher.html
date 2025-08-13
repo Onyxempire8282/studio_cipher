@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Cypher - Claim Cipher</title>
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+    <link rel="stylesheet" href="styles/route-cypher.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
+                    <span>📱</span> Jobs Studio
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-cipher-content">
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">🗺️ Route Cypher</h1>
+            <p class="page-cipher-subtitle">Optimize your routes with Google Maps integration</p>
+        </div>
+
+        <!-- Route Optimizer -->
+        <div class="cipher-grid cipher-grid--2">
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">📍 Job Selection</h3>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="job-cipher-selection" id="job-selection">
+                        <div class="job-cipher-item">
+                            <label class="cipher-checkbox">
+                                <input type="checkbox" data-job-id="1" data-address="123 Main St, Atlanta, GA">
+                                <span class="checkmark"></span>
+                                <div class="job-cipher-info">
+                                    <h4>CLM-2024-001</h4>
+                                    <p>123 Main St, Atlanta, GA</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="job-cipher-item">
+                            <label class="cipher-checkbox">
+                                <input type="checkbox" data-job-id="2" data-address="456 Oak Ave, Decatur, GA">
+                                <span class="checkmark"></span>
+                                <div class="job-cipher-info">
+                                    <h4>CLM-2024-002</h4>
+                                    <p>456 Oak Ave, Decatur, GA</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="job-cipher-item">
+                            <label class="cipher-checkbox">
+                                <input type="checkbox" data-job-id="3" data-address="789 Pine Rd, Marietta, GA">
+                                <span class="checkmark"></span>
+                                <div class="job-cipher-info">
+                                    <h4>CLM-2024-003</h4>
+                                    <p>789 Pine Rd, Marietta, GA</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="cipher-btn cipher-btn--primary cipher-btn--full" id="optimize-route-btn" disabled>
+                        ⚡ Optimize Route
+                    </button>
+                </div>
+            </div>
+
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">📊 Route Results</h3>
+                </div>
+                <div class="cipher-card-content">
+                    <div id="route-cipher-results" style="display: none;">
+                        <div class="route-cipher-stats">
+                            <div class="route-cipher-stat">
+                                <div class="stat-cipher-value" id="total-distance">0 miles</div>
+                                <div class="stat-cipher-label">Total Distance</div>
+                            </div>
+                            <div class="route-cipher-stat">
+                                <div class="stat-cipher-value" id="total-time">0 hours</div>
+                                <div class="stat-cipher-label">Total Time</div>
+                            </div>
+                            <div class="route-cipher-stat">
+                                <div class="stat-cipher-value" id="total-stops">0 stops</div>
+                                <div class="stat-cipher-label">Total Stops</div>
+                            </div>
+                        </div>
+                        
+                        <div class="route-cipher-list" id="optimized-route-list">
+                            <!-- Optimized route will be shown here -->
+                        </div>
+                    </div>
+                    
+                    <div id="route-cipher-placeholder" class="route-cipher-placeholder">
+                        <div class="placeholder-cipher-icon">🗺️</div>
+                        <p>Select jobs and optimize your route to see results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script src="scripts/route-cypher.js"></script>
+    <script>
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            initializeRouteCypher();
+        });
+    </script>
+</body>
+</html>

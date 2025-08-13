@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firms Directory - Claim Cipher</title>
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
+                    <span>📱</span> Jobs Studio
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-cipher-content">
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">🏢 Firms Directory</h1>
+            <p class="page-cipher-subtitle">Manage insurance firm contacts and rates</p>
+        </div>
+
+        <!-- Firms Grid -->
+        <div class="cipher-grid cipher-grid--3">
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">State Farm</h3>
+                    <span class="cipher-badge cipher-badge--success">Active</span>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="firm-cipher-details">
+                        <p><strong>Mileage Rate:</strong> $0.58/mile</p>
+                        <p><strong>Contact:</strong> claims@statefarm.com</p>
+                        <p><strong>Phone:</strong> 1-800-STATE-FARM</p>
+                        <p><strong>Portal:</strong> <a href="#" class="cipher-link">Login</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">Allstate</h3>
+                    <span class="cipher-badge cipher-badge--success">Active</span>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="firm-cipher-details">
+                        <p><strong>Mileage Rate:</strong> $0.62/mile</p>
+                        <p><strong>Contact:</strong> adjusters@allstate.com</p>
+                        <p><strong>Phone:</strong> 1-800-ALLSTATE</p>
+                        <p><strong>Portal:</strong> <a href="#" class="cipher-link">Login</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cipher-card">
+                <div class="cipher-card-header">
+                    <h3 class="cipher-card-title">Progressive</h3>
+                    <span class="cipher-badge cipher-badge--success">Active</span>
+                </div>
+                <div class="cipher-card-content">
+                    <div class="firm-cipher-details">
+                        <p><strong>Mileage Rate:</strong> $0.55/mile</p>
+                        <p><strong>Contact:</strong> claims@progressive.com</p>
+                        <p><strong>Phone:</strong> 1-800-PROGRESSIVE</p>
+                        <p><strong>Portal:</strong> <a href="#" class="cipher-link">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script>
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            showCipherNotification('Firms Directory loaded', 'success');
+        });
+    </script>
+</body>
+</html>

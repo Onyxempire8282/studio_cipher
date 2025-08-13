@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Studio - Claim Cipher</title>
+    <link rel="stylesheet" href="styles/cipher-core.css">
+    <link rel="stylesheet" href="styles/mobile-enhancements.css">
+    <link rel="stylesheet" href="styles/jobs-studio.css">
+</head>
+<body class="cipher-dark-theme">
+    <!-- Sidebar Cypher -->
+    <nav class="cipher-sidebar" id="cipher-sidebar">
+        <div class="sidebar-cipher-header">
+            <div class="sidebar-cipher-logo">
+                <a href="./command-center.html">🎤 Claim Cipher</a>
+            </div>
+        </div>
+        
+        <ul class="sidebar-cipher-nav">
+            <li class="sidebar-cipher-nav-item">
+                <a href="./command-center.html" class="sidebar-cipher-nav-link">
+                    <span>📊</span> Command Center
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🚗</span> Mileage Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
+                    <span>🗺️</span> Route Cypher
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
+                    <span>📱</span> Jobs Studio
+                    <span class="cipher-badge cipher-badge--pro">PRO</span>
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
+                    <span>🏢</span> Firms Directory
+                </a>
+            </li>
+            <li class="sidebar-cipher-nav-item">
+                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
+                    <span>⚙️</span> Settings Booth
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-cipher-footer">
+            <div class="sidebar-cipher-user" id="sidebar-user">
+                <div class="user-cipher-avatar" id="user-avatar">DU</div>
+                <div class="user-cipher-info">
+                    <div class="user-cipher-name" id="user-name">Demo User</div>
+                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
+                </div>
+            </div>
+            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
+                <span>🚪</span> Sign Out
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-cipher-content">
+        <div class="page-cipher-header">
+            <h1 class="page-cipher-title">📱 Jobs Studio</h1>
+            <p class="page-cipher-subtitle">Manage field inspections and sync photos from mobile devices</p>
+            <span class="cipher-badge cipher-badge--pro">PRO FEATURE</span>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="cipher-grid cipher-grid--4 mb-4">
+            <div class="cipher-card">
+                <div class="cipher-card-content">
+                    <div class="cipher-kpi">
+                        <div class="cipher-kpi-value">3</div>
+                        <div class="cipher-kpi-label">Active Jobs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cipher-card">
+                <div class="cipher-card-content">
+                    <div class="cipher-kpi">
+                        <div class="cipher-kpi-value">12</div>
+                        <div class="cipher-kpi-label">Photos Synced</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cipher-card">
+                <div class="cipher-card-content">
+                    <div class="cipher-kpi">
+                        <div class="cipher-kpi-value">8</div>
+                        <div class="cipher-kpi-label">Completed Today</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cipher-card">
+                <div class="cipher-card-content">
+                    <div class="cipher-kpi">
+                        <div class="cipher-kpi-value">97%</div>
+                        <div class="cipher-kpi-label">Sync Success</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jobs Management -->
+        <div class="cipher-card">
+            <div class="cipher-card-header">
+                <h3 class="cipher-card-title">🎵 Job Management</h3>
+                <div class="jobs-cipher-actions">
+                    <button class="cipher-btn cipher-btn--outline cipher-btn--sm" id="filter-jobs-btn">
+                        🔍 Filter
+                    </button>
+                    <button class="cipher-btn cipher-btn--primary cipher-btn--sm" id="new-job-btn">
+                        ➕ New Job
+                    </button>
+                </div>
+            </div>
+            <div class="cipher-card-content">
+                <div class="jobs-cipher-filters mb-4">
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn active" data-filter="all">All</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="scheduled">Scheduled</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="in-progress">In Progress</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <div class="jobs-cipher-list" id="jobs-list">
+                    <div class="job-cipher-card" data-status="scheduled">
+                        <div class="job-cipher-header">
+                            <h4>CLM-2024-001</h4>
+                            <span class="cipher-badge cipher-badge--warning">Scheduled</span>
+                        </div>
+                        <div class="job-cipher-details">
+                            <p><strong>Insured:</strong> John Smith</p>
+                            <p><strong>Address:</strong> 123 Main St, Atlanta, GA</p>
+                            <p><strong>Priority:</strong> High</p>
+                        </div>
+                        <div class="job-cipher-actions">
+                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">📝 Edit</button>
+                            <button class="cipher-btn cipher-btn--primary cipher-btn--sm">🎤 Start</button>
+                        </div>
+                    </div>
+
+                    <div class="job-cipher-card" data-status="in-progress">
+                        <div class="job-cipher-header">
+                            <h4>CLM-2024-002</h4>
+                            <span class="cipher-badge cipher-badge--info">In Progress</span>
+                        </div>
+                        <div class="job-cipher-details">
+                            <p><strong>Insured:</strong> Jane Doe</p>
+                            <p><strong>Address:</strong> 456 Oak Ave, Decatur, GA</p>
+                            <p><strong>Priority:</strong> Medium</p>
+                        </div>
+                        <div class="job-cipher-actions">
+                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">📱 View Photos</button>
+                            <button class="cipher-btn cipher-btn--success cipher-btn--sm">✅ Complete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/cipher-core.js"></script>
+    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/cipher-content.js"></script>
+    <script src="scripts/cipher-security.js"></script>
+    <script src="scripts/jobs-studio.js"></script>
+    <script>
+        if (localStorage.getItem('cipher_authenticated') !== 'true') {
+            window.location.href = './login-cypher.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCipherUserContext();
+            initializeEnhancedNavigation();
+            initializeCipherContent();
+            initializeCipherSecurity();
+            setupCipherLogoutHandler();
+            initializeJobsStudio();
+        });
+    </script>
+</body>
+</html>
