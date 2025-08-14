@@ -19,7 +19,8 @@ def agent_api_integration():
     print("\n🔒 SECURITY AGENT: Securing API configuration...")
     
     # Hidden API key (Security Agent handles this)
-    API_KEY_SECURE = "AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs"  # This will be hidden in actual files
+    # API Key removed for security - use environment variables
+    API_KEY_SECURE = os.getenv('GOOGLE_MAPS_API_KEY', 'CONFIGURE_YOUR_API_KEY')  # This will be hidden in actual files
     
     security_tasks = [
         "✅ API Key secured in environment configuration",

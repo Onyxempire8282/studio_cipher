@@ -1,4 +1,20 @@
 # 🎤 Studio Cipher - Git Ignore File
+
+# 🔐 API KEYS AND SECRETS - CRITICAL SECURITY
+*.key
+*.pem
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+google-api-config.js
+api-keys.json
+config/secrets.json
+secrets/
+private/
+confidential/
+
 # Python
 __pycache__/
 *.py[cod]

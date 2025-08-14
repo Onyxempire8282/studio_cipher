@@ -80,7 +80,8 @@ def security_emergency_maps_fix():
     
     <!-- Security Agent: Google Maps API with callback -->
     <script async defer 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs&libraries=places,geometry&callback=initRouteOptimizer">
+        <!-- Google Maps API removed for security -->
+        <!-- src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places,geometry&callback=initRouteOptimizer"> -->
     </script>
     
     <script src="scripts/route-optimizer.js"></script>

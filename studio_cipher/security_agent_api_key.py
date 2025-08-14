@@ -16,7 +16,8 @@ def security_agent_api_integration():
     print("🔒" * 50)
     
     # SECURITY AGENT: API Key (handled securely by agent only)
-    SECURE_API_KEY = "AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs"
+    # API Key removed for security - use environment variables
+    SECURE_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY', 'CONFIGURE_YOUR_API_KEY')
     
     print(f"🔐 SECURITY AGENT: API Key secured and ready for integration")
     print(f"🛡️ Key Pattern: {'*' * 35}{SECURE_API_KEY[-8:]}")

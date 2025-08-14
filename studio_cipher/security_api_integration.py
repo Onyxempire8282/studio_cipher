@@ -16,7 +16,8 @@ def integrate_google_maps_api():
     print("🔒" * 50)
     
     # API Configuration
-    GOOGLE_API_KEY = "AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs"
+    # API Key removed for security - configure with environment variable
+    GOOGLE_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY_HERE')
     
     print(f"\n🔐 SECURING API KEY: {'*' * 32}{GOOGLE_API_KEY[-8:]}")
     

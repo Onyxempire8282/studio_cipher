@@ -5,7 +5,8 @@
 
 // Security Agent: API Configuration (Production Ready)
 window.GOOGLE_MAPS_CONFIG = {
-    apiKey: 'AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs',
+    // API Key removed for security - configure with your own key
+    apiKey: 'CONFIGURE_YOUR_GOOGLE_MAPS_API_KEY',
     libraries: ['places', 'geometry'],
     version: 'weekly',
     services: {
