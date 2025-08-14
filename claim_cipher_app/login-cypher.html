@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="styles/cipher-core.css">
     <link rel="stylesheet" href="styles/mobile-enhancements.css">
     <link rel="stylesheet" href="styles/login-cypher.css">
-</head>
+    <!-- 🎨 UNIFIED VISUAL CONSISTENCY FIX -->
+    <link rel="stylesheet" href="styles/visual-consistency-fix.css">
+    <!--  UNIVERSAL GLASSMORPHISM DESIGN SYSTEM -->`n    <link rel="stylesheet" href="styles/glassmorphism-universal.css">`n    <!--  UNIVERSAL HEADER & LAYOUT FIXES -->`n    <link rel="stylesheet" href="styles/universal-header-fixes.css">`n</head>
 <body class="cipher-dark-theme">
     <div class="login-cypher-container">
         <div class="login-cipher-card">
-            <div class="cipher-logo">🎤 Claim Cipher</div>
-            <div class="cipher-subtitle">No Matter What</div>
+            <!-- 🎨 DESIGNER LOOP 4: Enhanced logo and branding -->
+            <div class="cipher-header">
+                <div class="cipher-logo">🎤 Claim Cipher</div>
+                <div class="cipher-subtitle">No Matter What</div>
+            </div>
             
             <div id="error-cypher" class="error-cypher"></div>
             
@@ -26,13 +31,13 @@
             <form id="login-cypher-form">
                 <div class="form-cipher-group">
                     <label class="form-cipher-label" for="login-email">Email</label>
-                    <input type="email" class="form-cipher-input" id="login-email" required autocomplete="username">
+                    <input type="email" autocomplete="email" spellcheck="false" class="form-cipher-input" id="login-email" required autocomplete="username">
                 </div>
                 
                 <div class="form-cipher-group">
                     <label class="form-cipher-label" for="login-password">Password</label>
                     <div class="password-cipher-group">
-                        <input type="password" class="form-cipher-input" id="login-password" required autocomplete="current-password">
+                        <input type="password" autocomplete="current-password" class="form-cipher-input" id="login-password" required autocomplete="current-password">
                         <button type="button" class="password-cipher-toggle" id="password-toggle" aria-label="Toggle password visibility">
                             👁️
                         </button>
@@ -75,13 +80,13 @@
                 
                 <div class="form-cipher-group">
                     <label class="form-cipher-label" for="signup-email">Email</label>
-                    <input type="email" class="form-cipher-input" id="signup-email" required>
+                    <input type="email" autocomplete="email" spellcheck="false" class="form-cipher-input" id="signup-email" required>
                 </div>
                 
                 <div class="form-cipher-group">
                     <label class="form-cipher-label" for="signup-password">Password</label>
                     <div class="password-cipher-group">
-                        <input type="password" class="form-cipher-input" id="signup-password" required>
+                        <input type="password" autocomplete="current-password" class="form-cipher-input" id="signup-password" required>
                         <button type="button" class="password-cipher-toggle" id="signup-password-toggle" aria-label="Toggle password visibility">
                             👁️
                         </button>
@@ -122,6 +127,190 @@
         </div>
     </div>
 
+    <!-- Signup Payment Modal -->
+    <div id="signup-payment-modal" class="cipher-modal" style="display: none;">
+        <div class="cipher-modal-content">
+            <div class="cipher-modal-header">
+                <h2>🎤 Complete Your Sign Up</h2>
+                <button class="cipher-modal-close" onclick="closeSignupModal()">&times;</button>
+            </div>
+            <div class="cipher-modal-body">
+                <form id="payment-form">
+                    <div class="form-cipher-row">
+                        <div class="form-cipher-group">
+                            <label class="form-cipher-label">Full Name *</label>
+                            <input type="text" id="payment-name" class="form-cipher-input" required>
+                        </div>
+                        <div class="form-cipher-group">
+                            <label class="form-cipher-label">Phone Number *</label>
+                            <input type="tel" id="payment-phone" class="form-cipher-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-cipher-group">
+                        <label class="form-cipher-label">Email Address *</label>
+                        <input type="email" id="payment-email" class="form-cipher-input" required>
+                    </div>
+                    
+                    <div class="payment-cipher-options">
+                        <h3>💳 Payment Method</h3>
+                        <div class="payment-cipher-tabs">
+                            <button type="button" class="payment-tab active" data-method="card">Credit/Debit Card</button>
+                            <button type="button" class="payment-tab" data-method="paypal">PayPal</button>
+                        </div>
+                        
+                        <div id="card-payment" class="payment-cipher-method active">
+                            <div class="form-cipher-row">
+                                <div class="form-cipher-group">
+                                    <label class="form-cipher-label">Card Number *</label>
+                                    <input type="text" id="card-number" class="form-cipher-input" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="form-cipher-group">
+                                    <label class="form-cipher-label">CVV *</label>
+                                    <input type="text" id="card-cvv" class="form-cipher-input" placeholder="123" maxlength="4" required>
+                                </div>
+                            </div>
+                            <div class="form-cipher-row">
+                                <div class="form-cipher-group">
+                                    <label class="form-cipher-label">Expiry Date *</label>
+                                    <input type="text" id="card-expiry" class="form-cipher-input" placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                <div class="form-cipher-group">
+                                    <label class="form-cipher-label">Cardholder Name *</label>
+                                    <input type="text" id="card-name" class="form-cipher-input" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="paypal-payment" class="payment-cipher-method">
+                            <div class="paypal-cipher-info">
+                                <div class="paypal-icon">🅿️</div>
+                                <p>You'll be redirected to PayPal to complete your payment securely.</p>
+                                <div class="paypal-benefits">
+                                    <span>✓ Secure Payment</span>
+                                    <span>✓ Buyer Protection</span>
+                                    <span>✓ No Card Details Required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-cipher-summary">
+                        <div class="price-row">
+                            <span>Claim Cipher Pro (Monthly)</span>
+                            <span class="price">$47/month</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Total Today</span>
+                            <span class="price">$47.00</span>
+                        </div>
+                        <div class="trial-info">🎯 Includes 7-day free trial</div>
+                    </div>
+                    
+                    <button type="submit" class="cipher-btn cipher-btn--primary cipher-btn--full">
+                        🎤 Start My Trial ($0 Today)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Timer (appears when in demo mode) -->
+    <div id="demo-timer" class="demo-cipher-timer" style="display: none;">
+        <div class="timer-content">
+            <span class="timer-icon">⏰</span>
+            <span class="timer-text">Demo Time Remaining: </span>
+            <span class="timer-countdown" id="demo-countdown">6d 23h 59m 45s</span>
+            <button class="timer-upgrade-btn" onclick="showUpgradeModal()">Upgrade Now</button>
+        </div>
+    </div>
+
     <script src="scripts/login-cypher.js"></script>
+
+    <script>
+    // Lyricist Emergency: Ensure login form works - FIXED
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🎵 Lyricist Emergency: Login form initialization');
+        
+        // Enable all inputs
+        const inputs = document.querySelectorAll('input[type="email"], input[type="password"]');
+        inputs.forEach(input => {
+            input.removeAttribute('disabled');
+            input.removeAttribute('readonly');
+            input.style.pointerEvents = 'auto';
+            input.style.opacity = '1';
+            console.log('🎵 Lyricist: Input enabled:', input.id);
+        });
+        
+        // Enable all buttons
+        const buttons = document.querySelectorAll('button, input[type="submit"]');
+        buttons.forEach(button => {
+            button.removeAttribute('disabled');
+            button.style.pointerEvents = 'auto';
+            button.style.opacity = '1';
+            console.log('🎵 Lyricist: Button enabled:', button.textContent);
+        });
+        
+        // Force focus capability - FIXED IDs
+        const emailInput = document.getElementById('login-email');
+        const passwordInput = document.getElementById('login-password');
+        
+        if (emailInput) {
+            emailInput.addEventListener('click', function() {
+                this.focus();
+            });
+        }
+        
+        if (passwordInput) {
+            passwordInput.addEventListener('click', function() {
+                this.focus();
+            });
+        }
+    });
+    
+    // 🎤 PRODUCER LOOP 10: Final Override Script
+    // 🎬 PRODUCTION MODE: Test button disabled for clean production interface
+    /*
+    setTimeout(() => {
+        console.log('🎤 PRODUCER LOOP 10: Final functionality check and override');
+        
+        // Test master login functionality - DISABLED FOR PRODUCTION
+        const testButton = document.createElement('button');
+        testButton.textContent = '🎤 Producer Test Login';
+        testButton.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        `;
+        testButton.onclick = function() {
+            const email = document.getElementById('login-email');
+            const password = document.getElementById('login-password');
+            
+            if (email && password) {
+                email.value = 'master@claimcipher.com';
+                password.value = 'cipher123';
+                
+                // Trigger form submission
+                const form = document.getElementById('login-cypher-form');
+                if (form) {
+                    form.dispatchEvent(new Event('submit'));
+                }
+            }
+        };
+        document.body.appendChild(testButton);
+        
+        console.log('🎤 PRODUCER: Test button added for instant login testing');
+        
+    }, 2000);
+    */
+    </script>
 </body>
 </html>
+

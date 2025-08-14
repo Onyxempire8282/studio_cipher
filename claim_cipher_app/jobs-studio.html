@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles/cipher-core.css">
     <link rel="stylesheet" href="styles/mobile-enhancements.css">
     <link rel="stylesheet" href="styles/jobs-studio.css">
-</head>
+    <!-- 🎨 UNIFIED VISUAL CONSISTENCY FIX -->
+    <link rel="stylesheet" href="styles/visual-consistency-fix.css">
+    <!--  UNIVERSAL GLASSMORPHISM DESIGN SYSTEM -->`n    <link rel="stylesheet" href="styles/glassmorphism-universal.css">`n    <!--  UNIVERSAL HEADER & LAYOUT FIXES -->`n    <link rel="stylesheet" href="styles/universal-header-fixes.css">`n</head>
 <body class="cipher-dark-theme">
     <!-- Sidebar Cypher -->
     <nav class="cipher-sidebar" id="cipher-sidebar">
@@ -112,63 +114,128 @@
         <!-- Jobs Management -->
         <div class="cipher-card">
             <div class="cipher-card-header">
-                <h3 class="cipher-card-title">🎵 Job Management</h3>
+                <h3 class="cipher-card-title">🎵 Job Management Hub</h3>
                 <div class="jobs-cipher-actions">
+                    <button class="cipher-btn cipher-btn--outline cipher-btn--sm" id="sync-jobs-btn">
+                        🔄 Sync Mobile
+                    </button>
                     <button class="cipher-btn cipher-btn--outline cipher-btn--sm" id="filter-jobs-btn">
-                        🔍 Filter
+                        🔍 Advanced Filter
                     </button>
                     <button class="cipher-btn cipher-btn--primary cipher-btn--sm" id="new-job-btn">
-                        ➕ New Job
+                        ➕ Create Job
                     </button>
                 </div>
             </div>
             <div class="cipher-card-content">
+                <!-- Quick Stats Bar -->
+                <div class="jobs-quick-stats" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                    <div class="quick-stat-item" style="background: rgba(76, 175, 80, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border-left: 3px solid #4caf50;">
+                        <div style="font-size: 0.8rem; color: #4caf50; font-weight: 600;">TODAY</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: var(--cipher-text-primary);" id="today-count">8</div>
+                    </div>
+                    <div class="quick-stat-item" style="background: rgba(255, 152, 0, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border-left: 3px solid #ff9800;">
+                        <div style="font-size: 0.8rem; color: #ff9800; font-weight: 600;">PENDING</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: var(--cipher-text-primary);" id="pending-count">3</div>
+                    </div>
+                    <div class="quick-stat-item" style="background: rgba(33, 150, 243, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border-left: 3px solid #2196f3;">
+                        <div style="font-size: 0.8rem; color: #2196f3; font-weight: 600;">IN PROGRESS</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: var(--cipher-text-primary);" id="progress-count">2</div>
+                    </div>
+                    <div class="quick-stat-item" style="background: rgba(103, 58, 183, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border-left: 3px solid var(--cipher-primary);">
+                        <div style="font-size: 0.8rem; color: var(--cipher-primary); font-weight: 600;">SYNC READY</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: var(--cipher-text-primary);" id="sync-count">5</div>
+                    </div>
+                </div>
+                
                 <div class="jobs-cipher-filters mb-4">
-                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn active" data-filter="all">All</button>
-                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="scheduled">Scheduled</button>
-                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="in-progress">In Progress</button>
-                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="completed">Completed</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn active" data-filter="all">📊 All Jobs</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="scheduled">⏰ Scheduled</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="in-progress">⚡ In Progress</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="completed">✅ Completed</button>
+                    <button class="cipher-btn cipher-btn--outline filter-cipher-btn" data-filter="high-priority">🔥 High Priority</button>
                 </div>
 
                 <div class="jobs-cipher-list" id="jobs-list">
-                    <div class="job-cipher-card" data-status="scheduled">
-                        <div class="job-cipher-header">
-                            <h4>CLM-2024-001</h4>
-                            <span class="cipher-badge cipher-badge--warning">Scheduled</span>
+                    <!-- Jobs will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Sync Status -->
+        <div class="cipher-card" style="margin-top: 1.5rem;">
+            <div class="cipher-card-header">
+                <h3 class="cipher-card-title">📱 Mobile Device Status</h3>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="cipher-badge cipher-badge--success" id="mobile-status">🟢 Connected</span>
+                    <button class="cipher-btn cipher-btn--ghost cipher-btn--sm" id="refresh-status-btn">🔄</button>
+                </div>
+            </div>
+            <div class="cipher-card-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div class="mobile-device-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                            <span style="font-size: 1.5rem; margin-right: 0.75rem;">📱</span>
+                            <div>
+                                <div style="font-weight: 600; color: var(--cipher-text-primary);">iPhone 15 Pro</div>
+                                <div style="font-size: 0.9rem; color: var(--cipher-text-secondary);">Last sync: 2 minutes ago</div>
+                            </div>
                         </div>
-                        <div class="job-cipher-details">
-                            <p><strong>Insured:</strong> John Smith</p>
-                            <p><strong>Address:</strong> 123 Main St, Atlanta, GA</p>
-                            <p><strong>Priority:</strong> High</p>
-                        </div>
-                        <div class="job-cipher-actions">
-                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">📝 Edit</button>
-                            <button class="cipher-btn cipher-btn--primary cipher-btn--sm">🎤 Start</button>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="color: var(--cipher-text-secondary); font-size: 0.9rem;">
+                                <div>� Photos: 12 pending</div>
+                                <div>📍 GPS: Active</div>
+                            </div>
+                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">📲 Sync Now</button>
                         </div>
                     </div>
-
-                    <div class="job-cipher-card" data-status="in-progress">
-                        <div class="job-cipher-header">
-                            <h4>CLM-2024-002</h4>
-                            <span class="cipher-badge cipher-badge--info">In Progress</span>
+                    
+                    <div class="mobile-device-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                            <span style="font-size: 1.5rem; margin-right: 0.75rem;">🤖</span>
+                            <div>
+                                <div style="font-weight: 600; color: var(--cipher-text-primary);">Samsung Galaxy S24</div>
+                                <div style="font-size: 0.9rem; color: var(--cipher-text-secondary);">Last sync: 15 minutes ago</div>
+                            </div>
                         </div>
-                        <div class="job-cipher-details">
-                            <p><strong>Insured:</strong> Jane Doe</p>
-                            <p><strong>Address:</strong> 456 Oak Ave, Decatur, GA</p>
-                            <p><strong>Priority:</strong> Medium</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="color: var(--cipher-text-secondary); font-size: 0.9rem;">
+                                <div>📸 Photos: 8 pending</div>
+                                <div>📍 GPS: Active</div>
+                            </div>
+                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">� Sync Now</button>
                         </div>
-                        <div class="job-cipher-actions">
-                            <button class="cipher-btn cipher-btn--outline cipher-btn--sm">📱 View Photos</button>
-                            <button class="cipher-btn cipher-btn--success cipher-btn--sm">✅ Complete</button>
-                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(33, 150, 243, 0.1); border-radius: 8px; border-left: 3px solid #2196f3;">
+                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <span style="margin-right: 0.5rem;">💡</span>
+                        <span style="font-weight: 600; color: var(--cipher-text-primary);">Pro Tip</span>
+                    </div>
+                    <div style="color: var(--cipher-text-secondary); font-size: 0.9rem; line-height: 1.4;">
+                        Enable automatic photo sync in the mobile app settings for real-time updates. Photos are compressed and optimized automatically for faster upload.
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Job Details Modal -->
+    <div class="job-modal-overlay" id="job-modal-overlay">
+        <div class="job-modal">
+            <div class="job-modal-header">
+                <h3 class="job-modal-title" id="job-modal-title">Job Details</h3>
+                <button class="job-modal-close" id="job-modal-close">×</button>
+            </div>
+            <div class="job-modal-content" id="job-modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <script src="scripts/cipher-core.js"></script>
-    <script src="scripts/enhanced-navigation.js">
+    <script src="scripts/enhanced-navigation.js"></script>
     <script src="scripts/cipher-content.js"></script>
     <script src="scripts/cipher-security.js"></script>
     <script src="scripts/jobs-studio.js"></script>
@@ -188,3 +255,4 @@
     </script>
 </body>
 </html>
+

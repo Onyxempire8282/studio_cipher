@@ -3,152 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mileage Cypher - Claim Cipher</title>
+    <title>Mileage Cipher - Claim Cipher</title>
     <link rel="stylesheet" href="styles/cipher-core.css">
-    <link rel="stylesheet" href="styles/mobile-enhancements.css">
-    <link rel="stylesheet" href="styles/mileage-cypher.css">
-</head>
-<body class="cipher-dark-theme">
-    <!-- Sidebar Cypher -->
-    <nav class="cipher-sidebar" id="cipher-sidebar">
-        <div class="sidebar-cipher-header">
-            <div class="sidebar-cipher-logo">
-                <a href="./command-center.html">🎤 Claim Cipher</a>
-            </div>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mileage-calculator.css">
+    <!-- 🎨 UNIFIED VISUAL CONSISTENCY FIX -->
+    <link rel="stylesheet" href="styles/visual-consistency-fix.css">
+    <!-- 🌟 UNIVERSAL GLASSMORPHISM DESIGN SYSTEM -->
+    <link rel="stylesheet" href="styles/glassmorphism-universal.css">
+    <!-- 🔥 GLASSMORPHISM FORCE OVERRIDE -->
+    <link rel="stylesheet" href="styles/glassmorphism-force-override.css">
+    <!--  UNIVERSAL HEADER & LAYOUT FIXES -->`n    <link rel="stylesheet" href="styles/universal-header-fixes.css">`n</head>
+<body class="mileage-page">
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <h1>🎤 Claim Cipher</h1>
+            <span class="tagline">No Matter What</span>
         </div>
-        
-        <ul class="sidebar-cipher-nav">
-            <li class="sidebar-cipher-nav-item">
-                <a href="./command-center.html" class="sidebar-cipher-nav-link">
-                    <span>📊</span> Command Center
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
-                    <span>🚗</span> Mileage Cypher
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./route-cypher.html" class="sidebar-cipher-nav-link">
-                    <span>🗺️</span> Route Cypher
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
-                    <span>📱</span> Jobs Studio
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
-                    <span>🏢</span> Firms Directory
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
-                    <span>⚙️</span> Settings Booth
-                </a>
-            </li>
-        </ul>
-        
-        <!-- User info -->
-        <div class="sidebar-cipher-footer">
-            <div class="sidebar-cipher-user" id="sidebar-user">
-                <div class="user-cipher-avatar" id="user-avatar">DU</div>
-                <div class="user-cipher-info">
-                    <div class="user-cipher-name" id="user-name">Demo User</div>
-                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
-                </div>
-            </div>
-            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
-                <span>🚪</span> Sign Out
-            </button>
+        <div class="nav-links">
+            <a href="command-center.html">Dashboard</a>
+            <a href="mileage-cypher.html" class="active">Mileage</a>
+            <a href="route-cypher.html">Routes</a>
+            <a href="settings-booth.html">Settings</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-cipher-content">
-        <div class="page-cipher-header">
-            <h1 class="page-cipher-title">🚗 Mileage Cypher</h1>
-            <p class="page-cipher-subtitle">Calculate reimbursement with multi-firm rates - No Matter What</p>
+    <main class="mileage-calculator-main">
+        <div class="page-header">
+            <h1>📊 Mileage Cipher</h1>
+            <p>Calculate billable miles with precision - every firm, every rate</p>
         </div>
 
-        <!-- Mileage Calculator -->
-        <div class="cipher-card">
-            <div class="cipher-card-header">
-                <h3 class="cipher-card-title">📏 Trip Calculator</h3>
-                <button class="cipher-btn cipher-btn--primary cipher-btn--sm" id="add-trip-btn">
-                    ➕ Add Trip
-                </button>
+        <div class="mileage-container">
+            <!-- Calculator Section -->
+            <div class="calculator-section">
+                <div class="firm-selection">
+                    <label for="firmSelect">🏢 Insurance Firm</label>
+                    <select id="firmSelect">
+                        <option value="">Select a firm...</option>
+                    </select>
+                    <button id="manageFirms" class="manage-btn">⚙️ Manage Firms</button>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="pointA">📍 Point A (From)</label>
+                        <input type="text" id="pointA" placeholder="Starting location">
+                    </div>
+                    <div class="input-group">
+                        <label for="pointB">📍 Point B (To)</label>
+                        <input type="text" id="pointB" placeholder="Destination">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="distanceMiles">📏 Distance (Miles)</label>
+                        <input type="number" id="distanceMiles" step="0.1" min="0" placeholder="0.0">
+                    </div>
+                    <div class="input-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="roundTrip">
+                            <span class="checkmark"></span>
+                            Round Trip
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="noteField">📝 Note (Optional)</label>
+                    <input type="text" id="noteField" placeholder="e.g., Customer > Shop">
+                </div>
+
+                <button id="calculateBtn" class="calculate-btn">🧮 Calculate Mileage</button>
             </div>
-            <div class="cipher-card-content">
-                <div class="mileage-cipher-table">
-                    <div class="table-cipher-header">
-                        <span>From</span>
-                        <span>To</span>
-                        <span>Miles</span>
-                        <span>Firm</span>
-                        <span>Amount</span>
-                        <span>Actions</span>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>💰 Mileage Breakdown</h3>
+                <div id="breakdownDisplay" class="breakdown-display"></div>
+                
+                <div class="copy-section">
+                    <h4>📋 Copy-Ready Line</h4>
+                    <div class="copy-container">
+                        <textarea id="copyText" readonly></textarea>
+                        <button id="copyBtn" class="copy-btn">📋 Copy</button>
                     </div>
-                    
-                    <div id="trips-cipher-container">
-                        <!-- Trips will be added here dynamically -->
-                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="newCalculation" class="new-btn">🔄 New Calculation</button>
+                    <a href="settings-booth.html" class="settings-link">⚙️ Saved to Settings</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Firms Management Modal -->
+        <div id="firmsModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🏢 Manage Firms</h3>
+                    <button class="close-btn" onclick="closeFirmsModal()">×</button>
                 </div>
                 
-                <div class="mileage-cipher-total">
-                    <h3>💰 Total Reimbursement: <span id="total-amount">$0.00</span></h3>
+                <div class="modal-body">
+                    <div class="firms-list">
+                        <h4>Current Firms</h4>
+                        <div id="firmsList"></div>
+                    </div>
+                    
+                    <div class="add-firm-section">
+                        <h4>Add New Firm</h4>
+                        <form id="addFirmForm">
+                            <div class="form-row">
+                                <input type="text" id="firmName" placeholder="Firm Name" required>
+                                <input type="number" id="firmFreeMiles" placeholder="Free Miles" min="0" step="1" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="number" id="firmRate" placeholder="Rate per Mile" min="0" step="0.01" required>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="firmRoundTripDefault">
+                                    <span class="checkmark"></span>
+                                    Round Trip Default
+                                </label>
+                            </div>
+                            <button type="submit" class="add-btn">➕ Add Firm</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Firm Rates -->
-        <div class="cipher-card">
-            <div class="cipher-card-header">
-                <h3 class="cipher-card-title">🏢 Firm Rates</h3>
-            </div>
-            <div class="cipher-card-content">
-                <div class="firm-rates-cipher-grid">
-                    <div class="firm-cipher-rate-card">
-                        <h4>State Farm</h4>
-                        <div class="rate-cipher-amount">$0.58/mile</div>
-                    </div>
-                    <div class="firm-cipher-rate-card">
-                        <h4>Allstate</h4>
-                        <div class="rate-cipher-amount">$0.62/mile</div>
-                    </div>
-                    <div class="firm-cipher-rate-card">
-                        <h4>Progressive</h4>
-                        <div class="rate-cipher-amount">$0.55/mile</div>
-                    </div>
-                    <div class="firm-cipher-rate-card">
-                        <h4>Geico</h4>
-                        <div class="rate-cipher-amount">$0.56/mile</div>
+        <!-- Import from Route Modal -->
+        <div id="routeImportModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🗺️ Import from Route</h3>
+                    <button class="close-btn" onclick="closeRouteImportModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Route data detected! Would you like to import the distance?</p>
+                    <div id="routeImportData"></div>
+                    <div class="modal-actions">
+                        <button id="importRouteBtn" class="import-btn">✅ Import</button>
+                        <button onclick="closeRouteImportModal()" class="cancel-btn">❌ Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Toast notifications -->
+        <div id="toastContainer" class="toast-container"></div>
     </main>
 
-    <script src="scripts/cipher-core.js"></script>
-    <script src="scripts/enhanced-navigation.js">
-    <script src="scripts/cipher-content.js"></script>
-    <script src="scripts/cipher-security.js"></script>
-    <script src="scripts/mileage-cypher.js"></script>
-    <script>
-        // Authentication check
-        if (localStorage.getItem('cipher_authenticated') !== 'true') {
-            window.location.href = './login-cypher.html';
-        }
+    <script src="scripts/mileage-calculator.js"></script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeCipherUserContext();
-            initializeEnhancedNavigation();
-            initializeCipherContent();
-            initializeCipherSecurity();
-            setupCipherLogoutHandler();
-            initializeMileageCypher();
-        });
+    <!-- Security Agent: Google Maps API for Distance Calculation -->
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs&libraries=places,geometry">
     </script>
 </body>
 </html>
+
+

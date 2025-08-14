@@ -3,173 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Route Cypher - Claim Cipher</title>
+    <title>Route Cipher - Claim Cipher</title>
     <link rel="stylesheet" href="styles/cipher-core.css">
-    <link rel="stylesheet" href="styles/mobile-enhancements.css">
-    <link rel="stylesheet" href="styles/route-cypher.css">
-</head>
-<body class="cipher-dark-theme">
-    <!-- Sidebar Cypher -->
-    <nav class="cipher-sidebar" id="cipher-sidebar">
-        <div class="sidebar-cipher-header">
-            <div class="sidebar-cipher-logo">
-                <a href="./command-center.html">🎤 Claim Cipher</a>
-            </div>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/route-optimizer.css">
+    <!-- 🎨 UNIFIED VISUAL CONSISTENCY FIX -->
+    <link rel="stylesheet" href="styles/visual-consistency-fix.css">
+    <!-- 🌟 UNIVERSAL GLASSMORPHISM DESIGN SYSTEM -->
+    <link rel="stylesheet" href="styles/glassmorphism-universal.css">
+    <!-- 🔥 GLASSMORPHISM FORCE OVERRIDE -->
+    <link rel="stylesheet" href="styles/glassmorphism-force-override.css">
+    <!--  UNIVERSAL HEADER & LAYOUT FIXES -->`n    <link rel="stylesheet" href="styles/universal-header-fixes.css">`n</head>
+<body class="route-page">
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <h1>🎤 Claim Cipher</h1>
+            <span class="tagline">No Matter What</span>
         </div>
-        
-        <ul class="sidebar-cipher-nav">
-            <li class="sidebar-cipher-nav-item">
-                <a href="./command-center.html" class="sidebar-cipher-nav-link">
-                    <span>📊</span> Command Center
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./mileage-cypher.html" class="sidebar-cipher-nav-link">
-                    <span>🚗</span> Mileage Cypher
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./route-cypher.html" class="sidebar-cipher-nav-link sidebar-cipher-nav-link--active">
-                    <span>🗺️</span> Route Cypher
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./jobs-studio.html" class="sidebar-cipher-nav-link">
-                    <span>📱</span> Jobs Studio
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./firms-directory.html" class="sidebar-cipher-nav-link">
-                    <span>🏢</span> Firms Directory
-                </a>
-            </li>
-            <li class="sidebar-cipher-nav-item">
-                <a href="./settings-booth.html" class="sidebar-cipher-nav-link">
-                    <span>⚙️</span> Settings Booth
-                </a>
-            </li>
-        </ul>
-        
-        <div class="sidebar-cipher-footer">
-            <div class="sidebar-cipher-user" id="sidebar-user">
-                <div class="user-cipher-avatar" id="user-avatar">DU</div>
-                <div class="user-cipher-info">
-                    <div class="user-cipher-name" id="user-name">Demo User</div>
-                    <div class="user-cipher-role" id="user-role">Demo Mode</div>
-                </div>
-            </div>
-            <button class="sidebar-cipher-logout cipher-btn cipher-btn--ghost cipher-btn--sm" id="logout-btn">
-                <span>🚪</span> Sign Out
-            </button>
+        <div class="nav-links">
+            <a href="command-center.html">Dashboard</a>
+            <a href="mileage-cypher.html">Mileage</a>
+            <a href="route-cypher.html" class="active">Routes</a>
+            <a href="settings-booth.html">Settings</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-cipher-content">
-        <div class="page-cipher-header">
-            <h1 class="page-cipher-title">🗺️ Route Cypher</h1>
-            <p class="page-cipher-subtitle">Optimize your routes with Google Maps integration</p>
+    <main class="route-optimizer-main">
+        <div class="page-header">
+            <h1>🗺️ Route Cipher</h1>
+            <p>Optimize your route like a pro - fastest path, smart splitting</p>
         </div>
 
-        <!-- Route Optimizer -->
-        <div class="cipher-grid cipher-grid--2">
-            <div class="cipher-card">
-                <div class="cipher-card-header">
-                    <h3 class="cipher-card-title">📍 Job Selection</h3>
+        <div class="route-optimizer-container">
+            <!-- Input Section -->
+            <div class="route-inputs">
+                <div class="input-group">
+                    <label for="startLocation">🎯 Starting Location</label>
+                    <input type="text" id="startLocation" placeholder="Enter starting address or coordinates">
                 </div>
-                <div class="cipher-card-content">
-                    <div class="job-cipher-selection" id="job-selection">
-                        <div class="job-cipher-item">
-                            <label class="cipher-checkbox">
-                                <input type="checkbox" data-job-id="1" data-address="123 Main St, Atlanta, GA">
-                                <span class="checkmark"></span>
-                                <div class="job-cipher-info">
-                                    <h4>CLM-2024-001</h4>
-                                    <p>123 Main St, Atlanta, GA</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="job-cipher-item">
-                            <label class="cipher-checkbox">
-                                <input type="checkbox" data-job-id="2" data-address="456 Oak Ave, Decatur, GA">
-                                <span class="checkmark"></span>
-                                <div class="job-cipher-info">
-                                    <h4>CLM-2024-002</h4>
-                                    <p>456 Oak Ave, Decatur, GA</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="job-cipher-item">
-                            <label class="cipher-checkbox">
-                                <input type="checkbox" data-job-id="3" data-address="789 Pine Rd, Marietta, GA">
-                                <span class="checkmark"></span>
-                                <div class="job-cipher-info">
-                                    <h4>CLM-2024-003</h4>
-                                    <p>789 Pine Rd, Marietta, GA</p>
-                                </div>
-                            </label>
+
+                <div class="destinations-section">
+                    <div class="section-header">
+                        <label>📍 Destinations</label>
+                        <button id="addDestination" class="add-btn">+ Add Stop</button>
+                    </div>
+                    <div id="destinationsList">
+                        <div class="destination-input">
+                            <input type="text" placeholder="Enter destination address">
+                            <button class="remove-btn" onclick="removeDestination(this)">×</button>
                         </div>
                     </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="route-settings">
+                    <div class="setting-row">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="optimizeEnabled" checked>
+                            <span class="toggle-slider"></span>
+                            Route Optimization
+                        </label>
+                    </div>
                     
-                    <button class="cipher-btn cipher-btn--primary cipher-btn--full" id="optimize-route-btn" disabled>
-                        ⚡ Optimize Route
-                    </button>
+                    <div class="setting-row">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="splitEnabled" checked>
+                            <span class="toggle-slider"></span>
+                            Day Splitting
+                        </label>
+                    </div>
+                    
+                    <div class="setting-row">
+                        <label for="maxLegMiles">Max Miles Per Leg:</label>
+                        <input type="number" id="maxLegMiles" value="50" min="1" max="500">
+                        <span>miles</span>
+                    </div>
+                </div>
+
+                <button id="optimizeRoute" class="optimize-btn">🚀 Optimize Route</button>
+            </div>
+
+            <!-- Results Section -->
+            <div class="route-results" id="routeResults" style="display: none;">
+                <h3>🎯 Optimized Route</h3>
+                <div id="routeOutput"></div>
+                <div class="route-actions">
+                    <button id="copyRoute" class="copy-btn">📋 Copy Route</button>
+                    <button id="exportMiles" class="export-btn">📊 Export to Mileage Calculator</button>
                 </div>
             </div>
 
-            <div class="cipher-card">
-                <div class="cipher-card-header">
-                    <h3 class="cipher-card-title">📊 Route Results</h3>
-                </div>
-                <div class="cipher-card-content">
-                    <div id="route-cipher-results" style="display: none;">
-                        <div class="route-cipher-stats">
-                            <div class="route-cipher-stat">
-                                <div class="stat-cipher-value" id="total-distance">0 miles</div>
-                                <div class="stat-cipher-label">Total Distance</div>
-                            </div>
-                            <div class="route-cipher-stat">
-                                <div class="stat-cipher-value" id="total-time">0 hours</div>
-                                <div class="stat-cipher-label">Total Time</div>
-                            </div>
-                            <div class="route-cipher-stat">
-                                <div class="stat-cipher-value" id="total-stops">0 stops</div>
-                                <div class="stat-cipher-label">Total Stops</div>
-                            </div>
-                        </div>
-                        
-                        <div class="route-cipher-list" id="optimized-route-list">
-                            <!-- Optimized route will be shown here -->
-                        </div>
-                    </div>
-                    
-                    <div id="route-cipher-placeholder" class="route-cipher-placeholder">
-                        <div class="placeholder-cipher-icon">🗺️</div>
-                        <p>Select jobs and optimize your route to see results</p>
-                    </div>
-                </div>
+            <!-- Map Container -->
+            <div class="map-container">
+                <div id="routeMap"></div>
             </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p>🎵 Calculating optimal route...</p>
+            </div>
+        </div>
+
+        <!-- Error Display -->
+        <div id="errorDisplay" class="error-display" style="display: none;">
+            <p id="errorMessage"></p>
+            <button onclick="hideError()">×</button>
         </div>
     </main>
 
-    <script src="scripts/cipher-core.js"></script>
-    <script src="scripts/enhanced-navigation.js">
-    <script src="scripts/cipher-content.js"></script>
-    <script src="scripts/cipher-security.js"></script>
-    <script src="scripts/route-cypher.js"></script>
-    <script>
-        if (localStorage.getItem('cipher_authenticated') !== 'true') {
-            window.location.href = './login-cypher.html';
-        }
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs&libraries=places,geometry&callback=initRouteOptimizer"></script>
+    <script src="scripts/route-optimizer.js"></script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeCipherUserContext();
-            initializeEnhancedNavigation();
-            initializeCipherContent();
-            initializeCipherSecurity();
-            setupCipherLogoutHandler();
-            initializeRouteCypher();
-        });
+    <!-- Security Agent: Google Maps API Script -->
+    <script>
+        // Security Agent: Global callback function
+        function initRouteOptimizer() {
+            console.log('🔒 Security Agent: Google Maps API loaded, initializing...');
+            
+            try {
+                if (typeof RouteOptimizer !== 'undefined') {
+                    window.routeOptimizer = new RouteOptimizer();
+                    
+                    // Initialize Google Maps
+                    if (window.routeOptimizer && typeof google !== 'undefined') {
+                        const mapContainer = document.getElementById('routeMap');
+                        if (mapContainer) {
+                            window.routeOptimizer.map = new google.maps.Map(mapContainer, {
+                                zoom: 10,
+                                center: { lat: 40.7128, lng: -74.0060 },
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            });
+                            
+                            window.routeOptimizer.directionsService = new google.maps.DirectionsService();
+                            window.routeOptimizer.directionsRenderer = new google.maps.DirectionsRenderer({
+                                draggable: true,
+                                panel: document.getElementById('directionsPanel')
+                            });
+                            window.routeOptimizer.geocoder = new google.maps.Geocoder();
+                            
+                            window.routeOptimizer.directionsRenderer.setMap(window.routeOptimizer.map);
+                            
+                            console.log('🔒 Security Agent: Google Maps fully initialized!');
+                        } else {
+                            console.error('🔒 Security Agent: Map container #routeMap not found');
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('🔒 Security Agent: Initialization error:', error);
+            }
+        }
+        
+        // Security Agent: Error handler for API failures
+        function gm_authFailure() {
+            console.error('🔒 Security Agent: Google Maps authentication failed');
+            document.getElementById('errorMessage').textContent = 'Google Maps failed to load. Check API key.';
+            document.getElementById('errorDisplay').style.display = 'block';
+        }
     </script>
+    
+    <!-- Security Agent: Google Maps API with callback -->
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR51CGOXEyVz8Dy-6hU7kdaqbq8-CTkBs&libraries=places,geometry&callback=initRouteOptimizer">
+    </script>
+    
+    <script src="scripts/route-optimizer.js"></script>
 </body>
 </html>
+
+

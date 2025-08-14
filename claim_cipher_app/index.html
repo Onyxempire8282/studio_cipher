@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Cipher - Loading...</title>
+    <title>Claim Cipher</title>
     <link rel="stylesheet" href="styles/cipher-core.css">
-</head>
+    <!-- UNIFIED VISUAL CONSISTENCY FIX -->
+    <link rel="stylesheet" href="styles/visual-consistency-fix.css">
+    <!-- UNIVERSAL GLASSMORPHISM DESIGN SYSTEM -->
+    <link rel="stylesheet" href="styles/glassmorphism-universal.css"></head>
 <body class="cipher-dark-theme">
     <div class="loading-stage">
         <div class="cipher-logo">🎤 Claim Cipher</div>
-        <div class="loading-text">Checking authentication...</div>
+        <div class="loading-text">Loading application...</div>
         <div class="cipher-spinner"></div>
     </div>
     
     <script>
-        // 🎤 Studio Cipher - Always redirect to login cypher
+        // Producer Agent: Smart redirect only for index page access
         (function() {
-            console.log('🔐 Index.html: Redirecting to login cypher...');
-            window.location.href = './login-cypher.html';
+            console.log('🎤 Producer Agent: Index page loaded');
+            
+            // Only redirect if user directly accessed index.html
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+                console.log('🎤 Redirecting to welcome page...');
+                setTimeout(function() {
+                    window.location.href = './welcome.html';
+                }, 1000);
+            }
         })();
     </script>
 </body>
 </html>
+

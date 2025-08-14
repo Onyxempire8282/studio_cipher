@@ -7,7 +7,7 @@ inputs:
 context: |
   Create a stunning login screen for Claim Cipher - insurance adjuster platform.
   Netflix-inspired layout with full-bleed background, centered form, smooth animations.
-  Hip-hop professional aesthetic: corporate clean with street-smart edge.
+  Gritty professional aesthetic: corporate clean with street-smart edge.
 
 acceptance:
   - "Full-bleed background with video/image fallback"
